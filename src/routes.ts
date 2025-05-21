@@ -67,10 +67,12 @@ routes.get("/withImages", (req: Request, res: Response) : any => {
 })
 
 
-routes.post("/users", (req: Request, res: Response) : any => UserController.create(res, req));
-
+routes.post("/users", (req: Request, res: Response) : any => UserController.create(req, res));
+routes.get("/users", (req: Request, res: Response) : any => UserController.read(req, res));
+routes.put("/users/:id", (req: Request, res: Response) : any => UserController.update(req, res));
+routes.delete("/users/:id", (req: Request, res: Response) : any => UserController.delete(req, res));
+routes.post("/login", (req: Request, res: Response) : any => UserController.login(req, res));
 
 export default routes
-
 
 
